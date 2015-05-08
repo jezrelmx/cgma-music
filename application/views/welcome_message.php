@@ -35,10 +35,9 @@
 					</div>
 					<div class="form-group">
 						<label for="">Contraseña</label>						
-						<input type="text" class="form-control" id="txtContrania" placeholder="Escriba su contraseña">
+						<input type="password" class="form-control" id="txtContrasenia" placeholder="Escriba su contraseña">
 					</div>
-					<center><button onclick="enviarMensaje()" type="submit" class="btn btn-primary">Submit</button></center>
-					
+					<center><button onclick="loguearUsuario()" type="submit" class="btn btn-primary">Entrar</button></center>
 				</form>
 		  	</div>
 		  </div>
@@ -48,5 +47,30 @@
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script>
+			function loguearUsuario() {
+				// var mensaje = document.getElementById('txtMensaje').value;
+				var txtUsuario = $('#txtUsuario').val();
+				var txtContrasenia = $('#txtContrasenia').val();
+				// alert('usuario ' + txtusuario + ' contraseña ' + txtContrasenia);
+				$.ajax({
+						url: 'http://localhost/cgma_musica/index.php/Welcome/loguearUsuario',
+						type: 'post',
+						data: {usuario: txtUsuario, contrasenia: txtContrasenia},
+						success: function (data) {
+							alert(data);
+							// var JSON_resultado = JSON.parse(data);
+							// if (JSON_resultado.code == 200) {
+							// 	alert('Hoy si duermo');	
+							// } else {
+							// 	alert('Te veo borroso');	
+							// };
+						},
+						error: function (data) {
+							alert('Te equivocaste mi buen');
+						}
+					});
+			}
+		</script>
 	</body>
 </html>
