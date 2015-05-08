@@ -17,8 +17,32 @@
 		<![endif]-->
 	</head>
 	<body>
-		<h1 class="text-center">CGMA MUSICA</h1>
-		
+		<div class="container-fluid">
+		  <div class="row">
+		  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		  		<h1 class="text-center">CGMA MUSICA</h1>
+		  		<center><legend>Música para el servidor público contemporaneo</legend></center>
+		  	</div>
+		  </div>
+		  <div class="row">
+		  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<form action="" method="POST" role="form">
+					
+					<div class="form-group">
+						<label for="">Usuario</label>
+						<input type="text" class="form-control" id="txtUsuario" placeholder="Escriba su nombre de usuario">
+						
+					</div>
+					<div class="form-group">
+						<label for="">Contraseña</label>						
+						<input type="text" class="form-control" id="txtContrania" placeholder="Escriba su contraseña">
+					</div>
+					<center><button onclick="enviarMensaje()" type="submit" class="btn btn-primary">Submit</button></center>
+					
+				</form>
+		  	</div>
+		  </div>
+		</div>
 
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
